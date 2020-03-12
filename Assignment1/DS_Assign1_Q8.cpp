@@ -26,7 +26,7 @@ string orderByAlphabet(string str) {
 int main() {
 	string str;
 	cout << "Enter a String : "; // String without Spaces
-	cin >> str;
+	getline(cin,str);
 	string sortedString = orderByAlphabet(str);
 	cout << "String Arranged By Alphabet : "<<sortedString;
 }
