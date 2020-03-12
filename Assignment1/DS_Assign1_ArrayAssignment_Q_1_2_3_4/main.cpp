@@ -23,7 +23,7 @@ int menuList() {
 	cout << "7. Iterative Binary Search" << endl;
 	cout << "8. Recursive Binary Search" << endl;
 	cout << "9. Bubble Sort" << endl;
-	//cout << "9. Selection Sort" << endl;
+	cout << "10. Selection Sort" << endl;
 	cout << "Enter Choice : ";
 	cin >> choice;
 	return choice;
@@ -76,7 +76,10 @@ int main() {
 			rcsv.binarySearch(array.getArr(),startIndex,array.getLen(),key);
 			break;
 		case 9:
-			sort.sort(array.getArr(), array.getLen());
+			sort.bubblesort(array.getArr(), array.getLen());
+			break;
+		case 10 :
+			sort.selectionSort(array.getArr(), array.getLen(),array);
 			break;
 		}
 	}

@@ -11,9 +11,10 @@ using namespace std;
 
 Array::Array() {
 	this->len = 10;
+	int temp=9;
 	this->arr = new int[len];
 	for (int i = 0; i < this->len; i++)
-		arr[i] = i;
+		arr[i] = temp--;
 }
 
 Array::Array(int len) {

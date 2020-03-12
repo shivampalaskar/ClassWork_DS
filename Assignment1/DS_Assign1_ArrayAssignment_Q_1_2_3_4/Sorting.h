@@ -5,13 +5,15 @@
  *      Author: shiva
  */
 
+#include "Array.h"
 #ifndef SRC_SORTING_H_
 #define SRC_SORTING_H_
 
 class Sorting {
 public:
 	Sorting();
-	void sort(int*,int len);
+	void bubblesort(int*,int len);
+	void selectionSort(int*,int,Array);
 	void swap(int&,int&);
 	virtual ~Sorting();
 };
