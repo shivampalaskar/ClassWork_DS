@@ -10,6 +10,7 @@ void shiftAndAddNewArrayElement(int *arr, int len, int from, int newValue) {
 }
 
 void displayArray(int *arr, int len) {
+	cout<<"Array : ";
 	for (int i = 0; i < len; i++) {
 		cout << left << setw(3) << arr[i];
 	}
@@ -36,19 +37,22 @@ int checkForIndex(int *arr, int len, int newValue) {
 	return insertIndex;
 }
 void acceptElement(int *arr, int len) {
+	for(int i=0;i<len;i++){
 	int newValue;
+	cout<<"arr["<<i<<"] : ";
 	cin >> newValue;
 	int insertIndex = checkForIndex(arr, len, newValue);
 	//cout<<"Insert Index : "<<insertIndex<<endl;
 		shiftAndAddNewArrayElement(arr, len, insertIndex, newValue);
+	}
 }
 
 int main() {
-	int arr[5];
-	int len = 5;
-	cout << "Enter Array Elements : ";
-	for (int i = 0; i < len; i++) {
-		acceptElement(arr, len);
-	}
+	int len;
+	cout<<"Enter Length of Array : ";
+	cin>>len;
+	int arr[len];
+	cout << "Enter Array Elements : "<<endl;
+	acceptElement(arr, len);
 	displayArray(arr, len);
 }
