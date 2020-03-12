@@ -13,7 +13,7 @@ Array::Array() {
 	this->len = 10;
 	this->arr = new int[len];
 	for (int i = 0; i < this->len; i++)
-		arr[i] = i + 1;
+		arr[i] = i;
 }
 
 Array::Array(int len) {
