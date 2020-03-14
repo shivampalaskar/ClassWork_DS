@@ -23,14 +23,16 @@ Array::Array(int len) {
 }
 
 void Array::insertElement() {
-	cout << "Enter Elements : ";
-	for (int i = 0; i < this->len; i++)
+	cout << "Enter Elements : "<<endl;
+	for (int i = 0; i < this->len; i++){
+		cout<<"a["<<i<<"] : ";
 		cin >> this->arr[i];
+	}
 }
 void Array::displayElements() {
 	cout << "Array Elements : ";
 	for (int i = 0; i < this->len; i++)
-		cout << left << setw(3) << this->arr[i];
+		cout << left << setw(6) << this->arr[i];
 	cout<<endl;
 }
 

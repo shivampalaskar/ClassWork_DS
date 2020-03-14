@@ -14,7 +14,7 @@ public:
 	Sorting();
 	void bubblesort(int*,int len);
 	void selectionSort(int*,int,Array);
-	void swap(int&,int&);
+	//void swap(int&,int&);
 	virtual ~Sorting();
 };
 
