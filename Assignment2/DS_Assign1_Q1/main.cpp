@@ -24,7 +24,15 @@ int main() {
 			break;
 		}
 		case 4: {
-			list.bubblesort();
+			list.bubbleSort_ByNode(); // This Sort whole Node
+			break;
+		}
+		case 5: {
+			list.selectionSort_ByValue(); // This will sort only integer Element in Node
+			break;
+		}
+		case 6: {
+			list.addNodeBySortedManner(list.createNewNode());
 			break;
 		}
 

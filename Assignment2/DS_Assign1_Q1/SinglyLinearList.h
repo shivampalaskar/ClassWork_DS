@@ -19,7 +19,11 @@ public:
 	Node* getHead();
 	void setHead(Node* head);
 	void swapNode(Node* node1, Node* preToNode2);
-	void bubblesort();
+	void bubbleSort_ByNode();
+	void selectionSort_ByValue();
+	Node* smallElementNode(Node* node1);
+	void swapByElement(Node *node1,Node *minValueNode);
+	void addNodeBySortedManner(Node* newNode);
 	~SinglyLinearList();
 };
 #endif /* SRC_SINGLYLINEARLIST_H_ */

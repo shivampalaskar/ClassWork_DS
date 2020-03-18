@@ -46,6 +46,45 @@ void SinglyLinearList::addNodeAtLast(Node *newNode) {
 	}
 }
 
+void SinglyLinearList::addNodeBySortedManner(Node* newNode) {
+	if (head == NULL)
+		head = newNode;
+	else {
+		Node *trav = head;
+		while (trav != NULL) {
+			if ((trav == head) && (trav->nextNode != NULL)) {
+				//cout<<"Head Node"<<endl;
+				if (newNode->num < trav->num) {
+					head = newNode;
+					newNode->nextNode = trav;
+					break;
+				} else if (newNode->num < trav->nextNode->num) {
+					newNode->nextNode = trav->nextNode;
+					trav->nextNode = newNode;
+					break;
+				}
+			} else if ((trav->nextNode == NULL)) {
+				//cout<<"Last Node"<<endl;
+				if (newNode->num < trav->num) {
+					head = newNode;
+					newNode->nextNode = trav;
+					trav->nextNode = NULL;
+					break;
+				} else{
+					addNodeAtLast(newNode);
+					break;
+				}
+			} else if (newNode->num < trav->nextNode->num) {
+				//cout<<"Middle Node"<<endl;
+				newNode->nextNode = trav->nextNode;
+				trav->nextNode = newNode;
+				break;
+			}
+			trav = trav->nextNode;
+		}
+	}
+}
+
 void SinglyLinearList::displayNode() {
 	Node *trav = head;
 	while (trav != NULL) {
@@ -104,7 +143,7 @@ void SinglyLinearList::swapNode(Node* preToNode1, Node* preToNode2) {
 	// When one node is First Node
 	if (preToNode2 == head) {
 		if (preToNode1->getNextNode() == node2) {
-			cout << "A d j a c e n t" << endl;
+			//cout << "A d j a c e n t" << endl;
 			this->head = node2;
 			node2->setNextNode(preToNode1);
 			preToNode1->setNextNode(nextToNode2);
@@ -123,17 +162,16 @@ void SinglyLinearList::swapNode(Node* preToNode1, Node* preToNode2) {
 		}
 	} else {
 		// When Both Node are in between the list
-		cout << "N o n - A d j a c e n t" << endl;
+		//cout << "N o n - A d j a c e n t" << endl;
 		preToNode1->nextNode = node2;
 		node2->nextNode = node1;
 		node1->nextNode = nextToNode2;
 	}
 }
 
-void SinglyLinearList::bubblesort() {
+void SinglyLinearList::bubbleSort_ByNode() {
 	SinglyLinearList list;
 	int len = list.getListLength(this->head);
-	cout << "Length : " << len << endl;
 	if (len == 0) {
 		cout << "List Is Empty " << endl;
 		return;
@@ -169,7 +207,7 @@ void SinglyLinearList::bubblesort() {
 				node1 = head;
 				node2 = head;
 				for (int k = 0; k <= j; k++) {
-					if(k!=j)
+					if (k != j)
 						node1 = node1->getNextNode();
 					node2 = node2->getNextNode();
 				}
@@ -182,6 +220,49 @@ void SinglyLinearList::bubblesort() {
 		node1 = head;
 		node2 = head;
 	}
+}
+
+Node* SinglyLinearList::smallElementNode(Node *node1) {
+	Node *trav = node1;
+	Node* preToMinvalueNode = node1;
+	int minValue = node1->getNum();
+	while (trav != NULL) {
+		if (trav->num < minValue) {
+			minValue = trav->num;
+			preToMinvalueNode = trav;
+		}
+		trav = trav->nextNode;
+	}
+	return preToMinvalueNode;
+}
+
+void SinglyLinearList::swapByElement(Node *node1, Node *minValueNode) {
+	int tempVar;
+	tempVar = node1->num;
+	node1->num = minValueNode->num;
+	minValueNode->num = tempVar;
+}
+
+void SinglyLinearList::selectionSort_ByValue() {
+	SinglyLinearList list;
+	int len = list.getListLength(this->head);
+	if (len == 0) {
+		cout << "List Is Empty " << endl;
+		return;
+	}
+	if (len == 1) {
+		cout << "Only 1 Element Is Present No Need To Sort" << endl;
+		return;
+	}
+	Node* node1 = head;
+	Node *minValueNode;
+	while (node1->nextNode != NULL) {
+		minValueNode = smallElementNode(node1);
+		if (minValueNode != node1) // To ignore self swapping
+			swapByElement(node1, minValueNode);
+		node1 = node1->nextNode;
+	}
+	cout << "Sorting Done !" << endl;
 }
 
 SinglyLinearList::~SinglyLinearList() {
