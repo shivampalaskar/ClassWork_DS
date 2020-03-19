@@ -114,7 +114,7 @@ void SinglyLinearList::makeListReverse(Node *trav) {
 int SinglyLinearList::recursionTest(int i) {
 	int j = 0;
 	if (i > 0)
-		j = test(i - 1);
+		j = recursionTest(i - 1);
 	cout << " i : " << i << endl;
 	cout << " j : " << j << endl;
 	return i;
