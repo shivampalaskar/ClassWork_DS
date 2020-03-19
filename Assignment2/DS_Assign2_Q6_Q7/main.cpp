@@ -63,17 +63,6 @@ int main() {
 			list.makeListReverse(list.getHead());
 			break;
 		}
-		case 8: {
-			if (list.isListEmpty())
-				cout << "List Is Empty" << endl;
-			else {
-				int grpSize;
-				cout << "Enter Group Size : ";
-				cin >> grpSize;
-				list.makeListReverseByGroup(list.getHead(),grpSize);
-			}
-			break;
-		}
 
 		}
 	}
