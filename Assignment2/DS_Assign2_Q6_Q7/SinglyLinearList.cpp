@@ -128,6 +128,36 @@ bool SinglyLinearList::searchEmployeeByID(int empID) {
 	return flag;
 }
 
+Node* SinglyLinearList::search(int key, Node **prev) {
+	Node *trav = head;
+	Node *preNode = head;
+	while (trav != NULL) {
+		if (trav->empID == key) {
+			*prev = preNode;
+			return trav;
+		}
+		preNode = trav;
+		trav = trav->nextNode;
+	}
+	*prev = NULL;
+	return NULL;
+}
+
+bool SinglyLinearList::search_and_delete(int key) {
+	Node *preNode = head;
+	Node* nodeToDelete = search(key, &preNode);
+	if (nodeToDelete == NULL)
+		return false;
+	else {
+		if (nodeToDelete == head) {
+			head = nodeToDelete->nextNode;
+			return true;
+		}
+		preNode->nextNode = nodeToDelete->nextNode;
+		return true;
+	}
+}
+
 void SinglyLinearList::deleteList() {
 	this->head = NULL;
 }

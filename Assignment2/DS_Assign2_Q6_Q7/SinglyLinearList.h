@@ -20,6 +20,8 @@ public:
 	void setHead(Node* head);
 	bool deleteEmployeeByID(int empID);
 	bool searchEmployeeByID(int empID);
+	Node* search(int key,Node **prev);
+	bool search_and_delete(int key);
 	void displayReverseList(Node *trav);
 	void makeListReverse(Node *trav);
 	void makeListReverseByGroup(Node *trav,int grpSize);

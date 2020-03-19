@@ -29,13 +29,14 @@ int main() {
 		case 4: {
 			if (list.isListEmpty())
 				cout << "List Is Empty" << endl;
-			else{
+			else {
 				int empID;
-				cout<<"Enter Employee ID : ";
-				cin>>empID;
+				cout << "Enter Employee ID : ";
+				cin >> empID;
 				bool flag = list.deleteEmployeeByID(empID);
-				if(flag)
-					cout<<"Emp ID "<<empID<<" Deleted Successfully "<<endl;
+				if (flag)
+					cout << "Emp ID " << empID << " Deleted Successfully "
+							<< endl;
 				else
 					cout << "Emp ID " << empID << " Not Found" << endl;
 			}
@@ -55,11 +56,27 @@ int main() {
 			break;
 		}
 		case 6: {
+			if (list.isListEmpty())
+				cout << "List Is Empty" << endl;
+			else {
+				int empID;
+				cout << "Enter Employee ID : ";
+				cin >> empID;
+				bool flag = list.search_and_delete(empID);
+				if (flag)
+					cout << "Emp ID " << empID << " Deleted Successfully "
+							<< endl;
+				else
+					cout << "Emp ID " << empID << " Not Found" << endl;
+			}
+			break;
+		}
+		case 7: {
 			list.displayReverseList(list.getHead());
 			cout << endl;
 			break;
 		}
-		case 7: {
+		case 8: {
 			list.makeListReverse(list.getHead());
 			break;
 		}

@@ -10,9 +10,10 @@ int menuList(){
 	cout<<"3. Delete All Nodes"<<endl;
 	cout<<"4. Delete Employee By Emp ID"<<endl;
 	cout<<"5. Search Employee By emp ID"<<endl;
-	cout<<"5. Display Reverse List (Recursive Method)"<<endl;
-	cout<<"6. Make List Reverse"<<endl;
-	cout<<"7. Reverse List By Group"<<endl;
+	cout<<"6. Search_And_Delete By ID"<<endl;
+	cout<<"7. Display Reverse List (Recursive Method)"<<endl;
+	cout<<"8. Make List Reverse"<<endl;
+	//cout<<"9. Reverse List By Group"<<endl;
 	cout<<"Enter Choice : ";
 	cin>>choice;
 	return choice;
