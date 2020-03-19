@@ -84,16 +84,40 @@ void SinglyLinearList::deleteList() {
 	this->head = NULL;
 }
 
-void SinglyLinearList::displayReverseList(Node *trav){
-	if(trav == NULL){
-		cout<<"Empty List"<<endl;
+void SinglyLinearList::displayReverseList(Node *trav) {
+	if (trav == NULL) {
+		cout << "Empty List" << endl;
 		return;
 	}
-	if(trav->nextNode != NULL){
+	if (trav->nextNode != NULL) {
 		displayReverseList(trav->nextNode);
 	}
-	cout<<trav->num<<" ";
+	cout << trav->num << " ";
 	return;
+}
+
+void SinglyLinearList::makeListReverse(Node *trav) {
+	if (trav == NULL) {
+		cout << "Empty List" << endl;
+		return;
+	}
+	if (trav->nextNode == NULL) {
+		head = trav;
+		return;
+	}
+	makeListReverse(trav->nextNode);
+	trav->nextNode->nextNode = trav;
+	trav->nextNode = NULL;
+	return;
+}
+
+int SinglyLinearList::recursionTest(int i) {
+	int j = 0;
+	if (i > 0)
+		j = test(i - 1);
+	cout << " i : " << i << endl;
+	cout << " j : " << j << endl;
+	return i;
 }
 
 SinglyLinearList::~SinglyLinearList() {

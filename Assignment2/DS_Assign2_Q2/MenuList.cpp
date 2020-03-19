@@ -9,6 +9,7 @@ int menuList(){
 	cout<<"2. Display"<<endl;
 	cout<<"3. Delete All Nodes"<<endl;
 	cout<<"4. Display Reverse List (Recursive Method)"<<endl;
+	cout<<"5. Make List Reverse"<<endl;
 	cout<<"Enter Choice : ";
 	cin>>choice;
 	return choice;

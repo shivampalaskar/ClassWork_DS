@@ -19,6 +19,8 @@ public:
 	Node* getHead();
 	void setHead(Node* head);
 	void displayReverseList(Node *trav);
+	void makeListReverse(Node *trav);
+	int recursionTest(int i);
 	~SinglyLinearList();
 };
 #endif /* SRC_SINGLYLINEARLIST_H_ */

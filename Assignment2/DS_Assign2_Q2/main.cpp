@@ -28,6 +28,15 @@ int main() {
 			cout<<endl;
 			break;
 		}
+		case 5: {
+			list.makeListReverse(list.getHead());
+			break;
+		}
+		case 6: {
+			list.recursionTest(5);
+			cout << endl;
+			break;
+		}
 
 		}
 	}
